@@ -13,21 +13,26 @@ function AirpaprLightboxOpen(imgLink) {
     
     // Get the link to the image we want to display
     var imgPaht = $(imgLink).attr('href');
+    
+    // We use the .load() function here to make sure
+    // that we append the image *after* it is loaded
+    $('<img class="airpapr-imageviewer" src="'+ imgPaht +'">').load(function() {
+        
+        $(this).appendTo('body');
 
-    // Add the image to the DOM
-	$('<img src="'+ imgPaht +'" class="airpapr-imageviewer">').appendTo('body');
-    
-    // Get the new elemen from the DOM
-    var img = $(".airpapr-imageviewer");
-    
-    // Add backdrop
-    $('body').prepend('<div id="backdrop"></div>');
-    
-    AirpaprLightboxResize();
+        // Add the image to the DOM
+        //$('<img src="'+ imgPaht +'" class="airpapr-imageviewer">').appendTo('body');
 
-    // reveal image
-    img.show()
-    img.animate({opacity: 1}, 100)
+        // Add backdrop
+        $('body').prepend('<div id="backdrop"></div>');
+
+        AirpaprLightboxResize();
+
+        // reveal image
+        $(this).show()
+        $(this).animate({opacity: 1}, 100)
+    
+    });
 
 };
 
