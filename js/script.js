@@ -9,11 +9,10 @@ $(document).ready(function() {
     $('.pic-link').click(function() {
         AirpaprLightboxOpen(this);
         return false;
-        
     });
 
     $(window).resize(function() {
-        resize($('#original'));
+        AirpaprLightboxResize();
     });
     
     $('body').on("click", ".airpapr-imageviewer", function() {
