@@ -28,6 +28,11 @@
        Modernizr enables HTML5 elements & feature detects for optimal performance.
        Create your own custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.5.3.min.js"></script>
+  
+  <!-- airpapr lightbox -->
+  
+    <script src="js/airpapr-lightbox/airpapr-lightbox.js"></script>
+    <link rel="stylesheet" href="js/airpapr-lightbox/style.css">
 </head>
 <body>
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you support IE 6.
@@ -38,10 +43,11 @@
   </header>
   <div role="main">
   
-  	<h1>Simple image viewer</h1>
+  	<h1>airpapr lightbox</h1>
 	  <div class="container">
-		  <img src="image/image-1.jpg" alt="org" id="original" />
-		  <img src="image/image-2.jpg" alt="pre" id="preview" />
+          <a class="pic-link" href="img/image-org.jpg">
+            <img id="preview" src="img/image-pre.jpg" alt="pre" />
+          </a>
 	  </div>
 	  <p>Built with jQuery</p>
 	  
