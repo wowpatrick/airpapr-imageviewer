@@ -23,7 +23,7 @@ function AirpaprLightboxOpen(imgLink) {
     // Add backdrop
     $('body').prepend('<div id="backdrop"></div>');
     
-    AirpaprLightboxCalcsize(img);
+    AirpaprLightboxResize();
 
     // reveal image
     img.show()
@@ -31,24 +31,19 @@ function AirpaprLightboxOpen(imgLink) {
 
 };
 
-function AirpaprLightboxResize() {
-    
-    var img = $('.airpapr-imageviewer');
-    
-    AirpaprLightboxCalcsize(img);
-
-}
-
-function AirpaprLightboxClose(img) {
+function AirpaprLightboxClose() {
     // Remove the image
-    $(img).animate({opacity: 0}, 100)
-    $(img).remove();
+    $('.airpapr-imageviewer').animate({opacity: 0}, 100)
+    $('.airpapr-imageviewer').remove();
 
     // Remove the backdrop
     $("#backdrop").remove();
 }
 
-function AirpaprLightboxCalcsize(img) {
+function AirpaprLightboxResize() {
+    
+    var img = $('.airpapr-imageviewer');
+    
     // Resize the image to the window width
     // http://stackoverflow.com/questions/1143517/jquery-resizing-image
 

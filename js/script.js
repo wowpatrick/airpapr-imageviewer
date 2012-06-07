@@ -16,7 +16,7 @@ $(document).ready(function() {
     });
     
     $('body').on("click", ".airpapr-imageviewer", function() {
-        AirpaprLightboxClose(this);
+        AirpaprLightboxClose();
     });
     
 });
