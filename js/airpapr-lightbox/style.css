@@ -10,13 +10,13 @@
 	margin: 0 auto;
 	opacity: 0;
 	display: none;
-	position: absolute;
+	position: fixed;
 	z-index: 100;
 }
 
 #backdrop {
 	background-color: rgba(0, 0, 0, .8);
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 50;
