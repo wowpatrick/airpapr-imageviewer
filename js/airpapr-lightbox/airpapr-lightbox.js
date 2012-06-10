@@ -61,18 +61,19 @@ function AirpaprLightboxResize() {
     var leftPostition = 0;                  // left image postiton
 
     // calculate image dimension
-
-    if (imgWidth > maxWidth) {
-        ratio = imgHeight / imgWidth;
-        imgWidth = maxWidth;
-        imgHeight = (maxWidth * ratio);
+    if (imgWidth > maxWidth || imgHeight > maxHeight) {
+        if (imgWidth > imgHeight) {
+            ratio = imgHeight / imgWidth;
+            imgWidth = maxWidth;
+            imgHeight = (maxWidth * ratio);
+        }
+        else {
+            ratio = imgWidth / imgHeight;
+            imgWidth = (maxHeight * ratio);
+            imgHeight = maxHeight;
+        }
     }
-    else if (imgHeight > maxHeight) {
-        ratio = imgWidth / imgHeight;
-        imgWidth = (maxHeight * ratio);
-        imgHeight = maxHeight;
-    }
-
+    
     // calculate image position
 
     // check if the window is larger than the image
