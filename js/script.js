@@ -14,7 +14,7 @@ $(document).ready(function() {
     $(window).resize(function() {
         AirpaprLightboxResize();
     });
-    
+
     $('body').on("click", ".airpapr-imageviewer", function() {
         AirpaprLightboxClose();
     });

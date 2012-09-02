@@ -7,26 +7,24 @@
 /*
  * TODO:
  * Add image resizing if window is enlarged
+ * Finish the gallary (http://jqueryfordesigners.com/image-loading/)
  */
 
 function AirpaprLightboxOpen(imgLink) {
     
     // Get the link to the image we want to display
+    var img = new Image();
     var imgPaht = $(imgLink).attr('href');
     
     // We use the .load() function here to make sure
     // that we append the image *after* it is loaded
-    $('<img class="airpapr-imageviewer" src="'+ imgPaht +'">').load(function() {
+    $(img).load(function() {
         
-        $(this).appendTo('body');
+        console.log('hello');
+        
+        $(imgLink).parent().find('viewBox').attr('src', imgPath);
+        // Set the src attribute of the view area to the clicked image
 
-        // Add the image to the DOM
-        //$('<img src="'+ imgPaht +'" class="airpapr-imageviewer">').appendTo('body');
-
-        // Add backdrop
-        $('body').prepend('<div id="backdrop"></div>');
-
-        AirpaprLightboxResize();
 
         // reveal image
         $(this).show()
@@ -34,7 +32,7 @@ function AirpaprLightboxOpen(imgLink) {
             opacity: 1
         }, 100)
     
-    });
+    }).attr('src', imgPath);
 
 };
 

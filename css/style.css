@@ -222,6 +222,10 @@ h1 {
 	margin: 0;
 }
 
+a {
+    display: inline-block;
+}
+
 
 /* ==|== media queries ======================================================
    EXAMPLE Media Query for Responsive Design.
